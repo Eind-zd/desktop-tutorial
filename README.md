@@ -1,5 +1,14 @@
-# Welcome to GitHub Desktop!
+一个个人理财系统
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+用户：系统使用者。
+账户：如现金、储蓄卡、信用卡、投资账户等，有名称和余额。
+交易：分为收入和支出，有金额、日期、分类、备注、关联账户。
+分类：对支出/收入进行归类（如餐饮、交通、工资、投资回报）。
+预算：为特定分类（如“餐饮”）设置周期性的支出限额。
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+定义实体间的关系（反映现实领域）：
+      一个用户有多个账户。
+      一个账户有多笔交易。
+      一笔交易属于一个分类，并从一个账户发生（支出扣减，收入增加）。
+      一个预算监控一个或多个分类的支出。
+      设计用户交互流程：规划用户如何通过命令行菜单（CLI）执行操作，例如：查看总览 -> 添加交易 -> 设置预算 -> 生成报表。
