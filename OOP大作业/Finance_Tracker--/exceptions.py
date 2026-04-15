@@ -13,3 +13,4 @@ class InvalidAmountError(Exception):
 class InvalidTransactionError(Exception):
     """无效交易异常"""
     pass
+    
