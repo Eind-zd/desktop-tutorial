@@ -9,3 +9,7 @@ class AccountNotFoundError(Exception):
 class InvalidAmountError(Exception):
     """无效金额"""
     pass
+
+class InvalidTransactionError(Exception):
+    """无效交易异常"""
+    pass

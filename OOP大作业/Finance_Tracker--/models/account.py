@@ -6,7 +6,7 @@ import uuid
 from abc import ABC, abstractmethod
 from structures.linked_list import DoublyLinkedList
 
-# 先定义自定义异常（根据文档5.1要求）
+
 class InsufficientBalanceError(Exception):
     """余额不足异常"""
     def __init__(self, current_balance: float, requested_amount: float):
@@ -20,7 +20,6 @@ class InvalidTransactionError(Exception):
 
 # 先定义基类Transaction（Account会用到）
 class Transaction(ABC):
-    """交易抽象基类（文档5.1要求）"""
     
     def __init__(self, amount: float, date: datetime, description: str, category: Optional[str] = None):
         self._amount = amount
@@ -53,17 +52,7 @@ class Transaction(ABC):
     def get_transaction_type(self) -> str:
         pass
     
-    def to_dict(self) -> Dict[str, Any]:
-        """转换为字典，用于序列化"""
-        return {
-            'transaction_id': self._transaction_id,
-            'amount': self._amount,
-            'date': self._date.isoformat(),
-            'description': self._description,
-            'category': self._category,
-            'type': self.get_transaction_type()
-        }
-    
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Transaction':
         """从字典创建对象，用于反序列化"""
@@ -97,7 +86,6 @@ class Expense(Transaction):
 
 
 class Stack:
-    """自定义栈（文档5.2要求）"""
     def __init__(self):
         self._items = []
     
@@ -447,7 +435,6 @@ class Account:
         return history
     
     def to_dict(self) -> Dict[str, Any]:
-        """转换为字典，用于序列化（文档3要求）"""
         return {
             'account_id': self._account_id,
             'name': self._name,
